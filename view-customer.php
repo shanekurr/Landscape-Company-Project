@@ -15,10 +15,29 @@ $sql= "SELECT `Customers`.`AccountNum`, `Customers`.`Name` , `Customers`.`Addres
 $result = mysqli_query($conn, $sql);
 
 $jobs=mysqli_fetch_array($result,MYSQLI_ASSOC);
-
+?>
+<html>
+<table style="border=1px;">
+<tr>
+	<td>Job Number</td>
+	<td>Date Created</td>
+	<td>Check In Time</td>
+	<td>Check Out Time</td>
+	<td>Verified</td>
+</tr>
+<?php
 foreach($result as $job):
-	echo $job['JobNum'];
+	echo "<tr>";
+	echo "<td>" . $job['JobNum'] . "</td>";
+	echo "<td>" . $job['DateAdded'] . "</td>";
+	echo "<td>" . $job['CheckIn'] . "</td>";
+	echo "<td>" . $job['CheckOut'] . "</td>";
+	echo "<td>" . $job['Verified'] . "</td>";
+	echo "</tr>";
 endforeach;
-
+?>
+</table>
+</html>
+<?php
 ?>
 

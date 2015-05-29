@@ -1,5 +1,8 @@
 <?php
 
+
+<?php
+
 require( 'connect.php' );
 
 $sql = "SELECT `AccountNum` , `Address` FROM `Customers`";
@@ -26,10 +29,10 @@ $array2=mysqli_fetch_array($jobs,MYSQLI_ASSOC);
 <html>
 <body>
 
-<h1>Admin View</h1><br>
+<h1>Sub-Contractor View</h1><br>
 
 	<div style="background-color:gray;">
-		<h2>Add Customer</h2>
+		<h2>View Jobs</h2>
 			<form method="post" action="add-customer.php">
 				<label for="name">Name</label>
 				<input type="text" name="name"><br>
@@ -51,7 +54,7 @@ $array2=mysqli_fetch_array($jobs,MYSQLI_ASSOC);
 	</div>
 
 	<div style="background-color:red;">
-		<h2>Add Job</h2>
+		<h2>Check In To Job</h2>
 			<form method="post" action="add-job.php">
 				
 				<label for="customer">Address</label>
@@ -75,7 +78,7 @@ $array2=mysqli_fetch_array($jobs,MYSQLI_ASSOC);
 	</div>
 
 	<div style="background-color:gray;">
-		<h2>View Customer</h2>
+		<h2>Check Out and Verify</h2>
 			<form method="post" action="view-customer.php">
 				<label for="customer">Address</label>
 				<select name="customer">
